@@ -1,0 +1,27 @@
+/* products.component.scss */
+
+ion-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+ion-button {
+  margin-top: 10px;
+  --background: #007bff;
+  --color: #fff;
+}
+
+ion-select {
+  margin-top: 10px;
+
+  .select-icon-inner {
+    color: #007bff;
+  }
+
+  .select-text {
+    color: #007bff;
+  }
+}

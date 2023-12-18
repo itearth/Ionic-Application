@@ -1,0 +1,25 @@
+<!-- products.component.html -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Products
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Add Product button -->
+  <ion-button (click)="showCategoryDropdown()">Add Product</ion-button>
+
+  <!-- Dropdown for product categories -->
+  <ion-select [(ngModel)]="selectedCategory" (ionChange)="addProduct(selectedCategory)">
+    <ion-select-option value="furniture">Furniture</ion-select-option>
+    <ion-select-option value="clothes">Clothes</ion-select-option>
+    <ion-select-option value="electronics">Electronics</ion-select-option>
+    <ion-select-option value="beauty">Beauty</ion-select-option>
+    <ion-select-option value="grocery">Grocery</ion-select-option>
+    <ion-select-option value="pharmacy">Pharmacy</ion-select-option>
+    <ion-select-option value="appliances">Appliances</ion-select-option>
+  </ion-select>
+</ion-content>
