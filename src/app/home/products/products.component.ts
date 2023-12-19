@@ -1,7 +1,8 @@
 // products.component.ts
+
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';  // Import ModalController
-import { ProductDetailModalComponent } from './product-detail-modal.component';  // Import ProductDetailModalComponent
+import { ModalController } from '@ionic/angular';
+import { ProductDetailModalComponent } from './product-detail-modal.component';
 
 @Component({
   selector: 'app-products',
@@ -11,23 +12,40 @@ import { ProductDetailModalComponent } from './product-detail-modal.component'; 
 export class ProductsComponent implements OnInit {
   products: any[] = [];
   selectedCategory: string = '';
+  isFormSubmitted: boolean = false; // Declare the property here
 
-  constructor(private modalController: ModalController) { }  // Inject ModalController
+  constructor(private modalController: ModalController) {
+    // Load products from local storage when the component is initialized
+    const storedProducts = localStorage.getItem('products');
+    this.products = storedProducts ? JSON.parse(storedProducts) : [];
+  }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   addProduct(selectedCategory: string) {
-    this.products.push({
-      name: `New Product - ${selectedCategory}`,
-      price: 10,
-      category: selectedCategory,
-    });
+    // Open the modal
+    this.showCategoryDropdown();
   }
 
   async showCategoryDropdown() {
     const modal = await this.modalController.create({
       component: ProductDetailModalComponent,
     });
+
+    // Subscribe to the productAdded event emitted by the modal
+    modal.onDidDismiss().then((data) => {
+      if (data.data && data.data.productAdded) {
+        // Add the new product to the array
+        this.products.push(data.data.productAdded);
+
+        // Save the updated products array to local storage of the browser
+        localStorage.setItem('products', JSON.stringify(this.products));
+      }
+    });
+
+    // Set the flag to true before opening the modal
+    this.isFormSubmitted = true;
+
     return await modal.present();
   }
 }
@@ -36,16 +54,10 @@ export class ProductsComponent implements OnInit {
 
 
 
-
-
-
-
-
-
-
-
-
+// // products.component.ts
 // import { Component, OnInit } from '@angular/core';
+// import { ModalController } from '@ionic/angular';  // Import ModalController
+// import { ProductDetailModalComponent } from './product-detail-modal.component';  // Import ProductDetailModalComponent
 
 // @Component({
 //   selector: 'app-products',
@@ -54,24 +66,38 @@ export class ProductsComponent implements OnInit {
 // })
 // export class ProductsComponent implements OnInit {
 //   products: any[] = [];
-//   selectedCategory: string = ''; // I added selectedCategory: string; to declare the selectedCategory property.
+//   selectedCategory: string = '';
 
-//   constructor() { }
+//   constructor(private modalController: ModalController) { }  // Inject ModalController
 
 //   ngOnInit() { }
 
-//   addProduct() {
-//     // Implement the logic to add a product based on the selected category
-//     // For example, you can push a new product to the 'products' array with the selected category
+//   addProduct(selectedCategory: string) {
 //     this.products.push({
-//       name: `New Product - ${this.selectedCategory}`,
+//       name: `New Product - ${selectedCategory}`,
 //       price: 10,
-//       category: this.selectedCategory,
+//       category: selectedCategory,
 //     });
 //   }
 
-//   showCategoryDropdown() {
-//     // Implement any logic you want when the button is clicked
-//     console.log('Button clicked');
+//   async showCategoryDropdown() {
+//     const modal = await this.modalController.create({
+//       component: ProductDetailModalComponent,
+//     });
+//     return await modal.present();
 //   }
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

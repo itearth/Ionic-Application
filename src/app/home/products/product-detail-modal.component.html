@@ -13,25 +13,24 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true">
   <!-- Product Detail Form -->
   <ion-item>
     <ion-label>Name</ion-label>
-    <ion-input [(ngModel)]="productName" placeholder="Enter product name"></ion-input>
+    <ion-input [(ngModel)]="product.name" placeholder="Enter product name"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>Description</ion-label>
-    <ion-textarea [(ngModel)]="productDescription" placeholder="Enter product description"></ion-textarea>
+    <ion-textarea [(ngModel)]="product.description" placeholder="Enter product description"></ion-textarea>
   </ion-item>
 
   <ion-item>
     <ion-label>Price</ion-label>
-    <ion-input type="number" [(ngModel)]="productPrice" placeholder="Enter product price"></ion-input>
+    <ion-input type="number" [(ngModel)]="product.price" placeholder="Enter product price"></ion-input>
   </ion-item>
 
   <!-- Add Product button -->
-  <ion-button expand="full" (click)="addProduct({ name: productName, description: productDescription, price: productPrice })">
-    Add Product
-  </ion-button>
+  <ion-button expand="full" (click)="addProduct()">Add Product</ion-button>
 </ion-content>
