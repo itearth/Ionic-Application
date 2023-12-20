@@ -32,5 +32,8 @@
   </ion-item>
 
   <!-- Add Product button -->
-  <ion-button expand="full" (click)="addProduct()">Add Product</ion-button>
+  <ion-button expand="full" *ngIf="!isEditMode()" (click)="addOrUpdateProduct()">Add Product</ion-button>
+
+  <!-- Update Product button -->
+  <ion-button expand="full" *ngIf="isEditMode()" (click)="addOrUpdateProduct()">Update Product</ion-button>
 </ion-content>
