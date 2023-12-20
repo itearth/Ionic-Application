@@ -7,7 +7,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ProductDetailModalComponent } from '../app/home/products/product-detail-modal.component';
+import { ProductDetailModalComponent } from './home/products/product-details/product-detail-modal.component';
 
 @NgModule({
   declarations: [AppComponent, ProductDetailModalComponent],

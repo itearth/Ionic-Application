@@ -2,7 +2,7 @@
 
 import { Component, EventEmitter, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { ProductDetailModalComponent } from './product-detail-modal.component';
+import { ProductDetailModalComponent } from './product-details/product-detail-modal.component';
 
 @Component({
   selector: 'app-products',
