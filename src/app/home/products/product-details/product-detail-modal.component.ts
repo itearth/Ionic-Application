@@ -1,5 +1,3 @@
-// product-detail-modal.component.ts
-
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
@@ -14,7 +12,7 @@ export class ProductDetailModalComponent {
   @Output() onAddProductEvent = new EventEmitter<any>();
   @Input() productToEdit: any;
 
-  constructor(private modalController: ModalController) {}
+  constructor(private modalController: ModalController) { }
 
   dismissModal() {
     this.modalController.dismiss();

@@ -6,6 +6,9 @@ import { FormsModule } from '@angular/forms';
 import { HomePageRoutingModule } from './home-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ProductsComponent } from './products/products.component';
+import { PostsComponent } from './posts/posts.component';
+import { CommentsComponent } from './comments/comments.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -13,9 +16,15 @@ import { ProductsComponent } from './products/products.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    HttpClientModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [LandingPageComponent, ProductsComponent]
+  declarations: [
+    LandingPageComponent,
+    ProductsComponent,
+    PostsComponent,
+    CommentsComponent
+  ]
 })
 export class HomePageModule { }

@@ -1,0 +1,33 @@
+/* comments.component.scss */
+
+ion-list {
+  ion-item {
+    ion-card {
+      margin: 10px; /* Adjust the margin as needed */
+      
+      ion-card-header {
+        ion-card-title {
+          font-weight: bold;
+          font-size: 18px; /* Adjust the font size as needed */
+        }
+
+        ion-card-subtitle {
+          font-size: 14px; /* Adjust the font size as needed */
+        }
+      }
+
+      ion-card-content {
+        margin-top: 10px; /* Adjust the margin as needed */
+        font-size: 16px; /* Adjust the font size as needed */
+      }
+    }
+  }
+
+  // Add more styles as needed
+}
+
+/* Apply styles for the case when there are no comments */
+noComments {
+  color: gray;
+  font-style: italic;
+}

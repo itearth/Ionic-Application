@@ -10,18 +10,6 @@
   <!-- Add Product button -->
   <ion-button (click)="handleAddProductControlClick()">Add Product</ion-button>
 
-  <!-- Dropdown for product categories -->
-  <!-- <ion-select [(ngModel)]="selectedCategory" (ionChange)="addProduct(selectedCategory)">
-    <ion-select-option value="furniture">Furniture</ion-select-option>
-    <ion-select-option value="clothes">Clothes</ion-select-option>
-    <ion-select-option value="electronics">Electronics</ion-select-option>
-    <ion-select-option value="beauty">Beauty</ion-select-option>
-    <ion-select-option value="grocery">Grocery</ion-select-option>
-    <ion-select-option value="pharmacy">Pharmacy</ion-select-option>
-    <ion-select-option value="appliances">Appliances</ion-select-option>
-  </ion-select> -->
-
-
   <!-- Display products in cards -->
   <ng-container *ngIf="!isFormSubmitted">
     <ion-card *ngFor="let product of products">

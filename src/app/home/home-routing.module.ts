@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ProductsComponent } from './products/products.component';
+import { PostsComponent } from './posts/posts.component';
+import { CommentsComponent } from './comments/comments.component';
 
 const routes: Routes = [
   {
@@ -12,6 +14,15 @@ const routes: Routes = [
     path: 'product',
     component: ProductsComponent,
   },
+  {
+    path: 'posts',
+    component: PostsComponent
+  },
+  {
+    path: 'comments',
+    component: CommentsComponent
+  }
+
 ];
 
 @NgModule({

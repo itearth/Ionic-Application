@@ -17,4 +17,14 @@ export class LandingPageComponent implements OnInit {
     this.router.navigate(['/product']);
   }
 
+  post() {
+    // Navigate to the "Posts" page
+    this.router.navigate(['/posts']);
+  }
+
+  comment() {
+    // Navigate to the "Comments" page
+    this.router.navigate(['/comments']);
+  }
+
 }
